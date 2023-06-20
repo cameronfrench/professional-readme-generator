@@ -6,32 +6,35 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
-    inquirer
-    .prompt([
         {
             type: 'input',
-            name: 'project title',
-            message: 'Write a project title for your README',
+            name: 'projectTitle',
+            message: 'Write a project title for your README:',
           },
           {
             type: 'input',
-            name: 'installation instructions',
-            message: 'Write your installation instructions for your application',
+            name: 'description',
+            message: 'Write the description of your project:',
           },
           {
             type: 'input',
-            name: 'usage information',
-            message: 'Write any usage information for your application',
+            name: 'installationInstructions',
+            message: 'Write your installation instructions for your application:',
           },
           {
             type: 'input',
-            name: 'contribution guidelines',
-            message: 'Write any contribution guidelines for your application',
+            name: 'usageInformation',
+            message: 'Write any usage information for your application:',
           },
           {
             type: 'input',
-            name: 'test instructions',
-            message: 'Write any test instructions for your application',
+            name: 'contributionGuidelines',
+            message: 'Write any contribution guidelines for your application:',
+          },
+          {
+            type: 'input',
+            name: 'testInstructions',
+            message: 'Write any test instructions for your application:',
           },
           {
             type: "checkbox",
@@ -62,7 +65,6 @@ const questions = [
             message: "Instructions for how to reach you: ",
             name: "prefCom",
           },
-    ])
 ];
 
 // TODO: Create a function to write README file
@@ -79,7 +81,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        writeToFile("NEW-README.md", response);
+        writeToFile("NEW-README.md", answers);
   });
 }
 
