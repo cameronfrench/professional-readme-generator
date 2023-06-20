@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// This functions pulls the license badge image, hyperlinks it to the documentation, and returns no badge if there is no input. 
 function renderLicenseBadge(license) {
   const licenseBadges = {
     MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
@@ -10,11 +9,10 @@ function renderLicenseBadge(license) {
     WTFPL: '[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)',
   };
 
-  return license && license !== 'none' ? licenseBadges[license] || '' : '';
+  return license !== 'none' ? licenseBadges[license] || '' : '';
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// This function generates a link to the documentation for the license chosen. 
 function renderLicenseLink(license) {
   const licenseLinks = {
     MIT: '[MIT](https://opensource.org/licenses/MIT)',
@@ -25,24 +23,20 @@ function renderLicenseLink(license) {
     WTFPL: '[WTFPL](http://www.wtfpl.net/about/)',
   };
 
-  return license && license !== 'none' ? licenseLinks[license] || '' : '';
+  return license !== 'none' ? licenseLinks[license] || '' : '';
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// This function generates a section in the README that includes the license link. 
+
 function renderLicenseSection(license) {
-  return license && license !== 'none'
+  return license !== 'none'
     ? `## License
-This project is licensed under the ${license} license.
-
-${renderLicenseBadge(license)}
-
-For more information, see the ${renderLicenseLink(license)}.
-`
+    
+This project is licensed under the ${renderLicenseLink(license)} license.`
     : '';
 }
 
-// TODO: Create a function to generate markdown for README
+// This function creates markdown for the new README and organizes the input into it's relevant section. 
 function generateMarkdown(data) {
   return `# ${data.projectTitle}
   ${renderLicenseBadge(data.license)}
@@ -64,6 +58,8 @@ function generateMarkdown(data) {
   
   ## Usage
   ${data.usageInformation}
+
+  ${renderLicenseSection(data.license)}
   
   ## Contributing
   ${data.contributionGuidelines}

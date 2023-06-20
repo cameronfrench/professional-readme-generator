@@ -1,5 +1,5 @@
-# test
-  
+# Test
+  [![License](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
   
   ## Table of Contents
   - [Description](#description)
@@ -11,22 +11,26 @@
   - [Questions](#questions)
   
   ## Description
-  undefined
+  Test
   
   ## Installation
-  test
+  Test
   
   ## Usage
-  test
+  Test
+
+  ## License
+    
+This project is licensed under the [MPL 2.0](https://opensource.org/licenses/MPL-2.0) license.
   
   ## Contributing
-  test
+  Test
   
   ## Tests
-  test
+  Test
   
   ## Questions
-  GitHub: [test](https://github.com/test)
-  For any questions, please contact me at test.
-  test
+  GitHub: [Test](https://github.com/Test)
+  For any questions, please contact me at Test.
+  Test
   
